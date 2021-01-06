@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.cell.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.cell.*?>
+<?import main.*?>
+
+<GridPane alignment="CENTER" hgap="5.0" vgap="5.0" fx:controller="main.ContractController" xmlns:fx="http://javafx.com/fxml" >
+    
+    <children>
+        
+        <!--LABELS-->
+        <Label fx:id="MainLabel" text="Chose your package and insert" GridPane.columnIndex="1" GridPane.rowIndex="0" GridPane.columnSpan="3"/>
+        <Label text="Firstname:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <Label text="Lastname:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+        <Label text="Speed-Mbit:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+        <Label text="Flow-GB:" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+        <Label text="Contract-Year:" GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+        <Label text="All Contracts:" GridPane.columnIndex="0" GridPane.rowIndex="15"/>
+        
+        <!--Controls-->
+        <TextField fx:id="Firstname" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Your Firstname"/>
+        <TextField fx:id="Lastname" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="Your Lastname"/>
+        <TextField fx:id="Address" GridPane.columnIndex="1" GridPane.rowIndex="6" promptText="Your address"/>
+        
+        <!-- Speed box -->
+        <ChoiceBox fx:id="Speed" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            
+        <!-- Flow box -->
+        <ChoiceBox fx:id="Flow" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            
+        <!-- Contract box -->
+        <ChoiceBox fx:id="Contract" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+        
+        <!-- Table for contracts display --> 
+        <TableView fx:id="table" GridPane.columnIndex="1" GridPane.rowIndex="15">
+            
+            <columns>
+                <TableColumn text="Firstname">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Firstname" /> <!-- extracts the field value from the object -->
+                    </cellValueFactory>
+                </TableColumn>
+                    
+                <TableColumn text="Lastname">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Lastname" />
+                    </cellValueFactory>
+                </TableColumn>
+                    
+                <TableColumn text="Address">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Address" />
+                    </cellValueFactory>                        
+                </TableColumn>
+                    
+                <TableColumn text="Mbit">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Speed" />
+                    </cellValueFactory>                        
+                </TableColumn>
+                    
+                <TableColumn text="GB">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Flow" />
+                    </cellValueFactory>                        
+                </TableColumn>
+                    
+                <TableColumn text="Years">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Contract" />
+                    </cellValueFactory>                        
+                </TableColumn>
+                    
+                <TableColumn text="Id:">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="Id" />
+                    </cellValueFactory>                        
+                </TableColumn>
+            </columns>
+   
+        </TableView>
+        
+        <!-- Button controlls -->
+        <HBox fx:id="Hbox" alignment="TOP_LEFT" spacing="5.0"  GridPane.columnIndex="1" GridPane.rowIndex="13">
+            <children>
+                <Button fx:id="Submit_Btn" mnemonicParsing="false" text="Submit" onAction="#saveContract"/> <!-- SAVE -->
+                <Button fx:id="Delete_Btn" mnemonicParsing="false" text="Delete Contract" onAction="#deleteEntry"/> <!-- Delete -->
+                <Button fx:id="Clear_Input" mnemonicParsing="false" text="Clear" onAction="#clearInput"/> <!-- Clear -->
+                <Button fx:id="Exit" mnemonicParsing="false" text="Exit" onAction="#exitApplication"/> <!-- Exit App -->
+            </children>
+        </HBox>
+        
+    </children>
+</GridPane> 

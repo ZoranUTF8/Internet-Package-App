@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-Aug-2020, 21:43:36
+    Author     : zoranjanjic
+*/
+
+.root
+{
+    -fx-background-image: url("background.jpg");
+    
+   
+}
+.button
+{
+    -fx-border-radius: 5;
+   
+}
+.label
+{
+    -fx-text-fill: #191970;
+}
+.text-field, #TextArea_All_Contracts
+{
+    -fx-background-color: #778899;
+    -fx-border-color: #778899; 
+    -fx-text-fill: #191970;
+    
+}
+
+.text-field:hover, .text-field:focused, text-area:hover
+{
+    -fx-border-color: #F5FFFA
+}
+
+#Submit_Btn:hover, #Delete_Btn:hover, #All_Contracts_Btn:hover, #Clear_Input:hover, #Exit:hover
+{
+    -fx-cursor: hand;
+    -fx-background-color: green;
+    -fx-border-color: #778899;
+    -fx-text-fill: white;
+    -fx-border-style:solid;
+}
+#Submit_Btn:pressed, #Delete_Btn:pressed, #All_Contracts_Btn:pressed, #Clear_Input:pressed, #Exit:pressed
+{
+    -fx-background-color: red;
+    -fx-border-color: #778899;
+}
